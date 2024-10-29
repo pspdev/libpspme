@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  push:
+
+jobs:
+  PSP:
+    runs-on: ubuntu-latest
+    container: pspdev/pspdev:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build
+        run: |
+            cmake -S . -B build \
+                -DCMAKE_TOOLCHAIN_FILE=$PSPDEV/psp/share/pspdev.cmake \
+                -DCMAKE_BUILD_TYPE=RelWithDebInfo
+            cmake --build build --config RelWithDebInfo
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: libpspme
+          path: |
+            build/bin/
+            build/lib/
