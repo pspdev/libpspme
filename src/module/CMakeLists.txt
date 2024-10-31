@@ -2,15 +2,10 @@
 project(pspme_prx)
 
 # Collect source files for the PRX module
-file(GLOB MODULE_SOURCES *.c)
+file(GLOB MODULE_SOURCES *.c *.exp)
 
-# Find all .exp files in the directory
-file(GLOB EXP_FILES *.exp)
-
-add_prx_module(
-    TARGET pspme_prx
-    SRC_FILES ${MODULE_SOURCES}
-    EXP_FILES ${EXP_FILES}
+add_prx_module(pspme_prx
+    ${MODULE_SOURCES}
 )
 
 # Set output name to "pspme.prx"
