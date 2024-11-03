@@ -9,4 +9,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # Add subdirectories for each component
 add_subdirectory(src/lib)         # Static library
 add_subdirectory(src/module)      # PRX module
-add_subdirectory(src/example)     # Example program
+add_subdirectory(examples/basic)     # Basic example program

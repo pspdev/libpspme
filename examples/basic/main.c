@@ -9,7 +9,7 @@
 
 #define VERS 1
 #define REVS 0
-PSP_MODULE_INFO("FooME", 0, VERS, REVS);
+PSP_MODULE_INFO("BasicME", 0, VERS, REVS);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER | THREAD_ATTR_VFPU);
 
 static int exitRequest = 0;
